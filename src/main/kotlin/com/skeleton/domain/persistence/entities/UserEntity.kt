@@ -1,15 +1,10 @@
 package com.skeleton.domain.persistence.entities
 
+import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.GenericGenerator
 import org.hibernate.annotations.UpdateTimestamp
 import java.time.ZonedDateTime
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.Table
 
 @Entity
 @Table(name = "users")
@@ -27,7 +22,7 @@ class UserEntity(
     private var phone: String
 ) {
 
-    private constructor() : this("","", "", "")
+    constructor() : this("", "", "", "")
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
